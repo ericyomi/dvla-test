@@ -1,0 +1,15 @@
+@(vehicle: VehicleRegistration)(implicit messages: Messages)
+
+@import helper._
+
+@main("DVLA Vehicle Enquiry") {
+<script type='text/javascript' src='@routes.Assets.versioned("javascripts/index.js")'></script>
+<h1>Registration Number: @vehicle.regNumber</h1>
+<h2>Vehicle Details</h2>
+<ul>
+    <li>
+        <div>Vehicle Make:</div>
+        <div>@vehicle.vehicleMake</div>
+    </li>
+</ul>
+}

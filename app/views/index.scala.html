@@ -1,0 +1,18 @@
+@(search: Form[CreateVehicleRegistrationSearchForm])(implicit messages: Messages)
+
+@import helper._
+
+@main("DVLA Vehicle Enquiry") {
+<script type='text/javascript' src='@routes.Assets.versioned("javascripts/index.js")'></script>
+<h1>Details of the vehicle being checked</h1>
+<h2>To make an enquiry enter the vehicle registration number (number plate) and the vehicle make.</h2>
+@form(routes.VehicleRegistrationSearchController.search) {
+@inputText(search("regNumber"), '_class -> "details-key")
+@inputText(search("vehicleMake"), '_class -> "details-key")
+@inputText(search("v5cDocRef"), '_class -> "details-key")
+
+<div class="buttons">
+	<input type="submit" value="Search"/>
+</div>
+}
+}
